@@ -1,6 +1,10 @@
 var shinyscreenshot = {
   initScreenshot : function(params) {
-    setTimeout(function() { shinyscreenshot.takeScreenshot(params) }, params.timer*1000);
+    if (params.timer == 0) {
+      shinyscreenshot.takeScreenshot(params);
+    } else {
+      setTimeout(function() { shinyscreenshot.takeScreenshot(params) }, params.timer*1000);
+    }
   },
 
   takeScreenshot : function(params) {
